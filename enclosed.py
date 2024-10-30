@@ -52,6 +52,8 @@ def atualizar_position(bulletlist):
     for bullet in bulletlist:
         bullet.change_bullet_position_per_tick()
 
+def calculate_pixelpos_by_angle(angle):
+    pass
 
 player = player_box()
 gunplayer = gun()
