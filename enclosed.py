@@ -3,10 +3,10 @@ import math as m
 bulletlist = []
 
 class objct():
-    def __init__(self, x = 0, y = 0):
+    def __init__(self, x = 0, y = 0, height = 2, width = 2 ):
         self.position = [x,y]
-        self.height = 2
-        self.width = 2
+        self.height = height
+        self.width = width
         self.orientation = 0
 
 class bullet():
@@ -54,6 +54,13 @@ def atualizar_position(bulletlist):
 
 def calculate_pixelpos_by_angle(angle):
     pass
+
+def detect_things(player_pos, field, alcance = 10):
+    detected = []
+    for objct in field:
+        if objct.position[0]>player_pos[0]-alcance and objct.position[0]<player_pos[0]+alcance and objct.position[1]>player_pos[1]-alcance and objct.position[1]<player_pos[1]+alcance:
+            detected.append(objct)
+    return detected
 
 player = player_box()
 gunplayer = gun()
